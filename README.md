@@ -58,9 +58,25 @@ A script with some examples how to work with jFacade and Sketch layers.
 * copiesWithVaryingOpacity
 
 ### script_template_jFacade.jstalk
-A Sketch JSTalk script template with
+A Sketch JSTalk script template.
 
-* the library includes
-* an anonymous, self executing “main” function to wrap the code
-* a cleanup function call at the end
+```
+#import 'library/sketch_connector.jstalk'
+#import 'library/functional.jstalk'
+#import 'library/jFacade.jstalk'
+
+// Anonymous function holds the code.
+// Helps to avoid Sketch memory issue based crashes.
+// Is executed automatically.
+(function main() {
+  // Check if an element is selected
+  if (sketch.checkSelection(1, "Please select an element.")) {
+    // your code ...
+  }
+}());
+
+// Set all defined objects to null to force garbage collection,
+// otherwise Sketch may crash.
+sketch.cleanup();
+```
 
