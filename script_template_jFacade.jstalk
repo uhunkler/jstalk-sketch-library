@@ -1,0 +1,17 @@
+#import 'library/sketch_connector.jstalk'
+#import 'library/functional.jstalk'
+#import 'library/jFacade.jstalk'
+
+// Anonymous function holds the code.
+// Helps to avoid Sketch memory issue based crashes.
+// Is executed automatically.
+(function main() {
+  // Check if an element is selected
+  if (sketch.checkSelection(1, "Please select an element.")) {
+    // your code ...
+  }
+}());
+
+// Set all defined objects to null to force garbage collection,
+// otherwise Sketch may crash.
+sketch.cleanup();

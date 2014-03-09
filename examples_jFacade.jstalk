@@ -1,0 +1,100 @@
+#import 'library/sketch_connector.jstalk'
+#import 'library/functional.jstalk'
+#import 'library/jFacade.jstalk'
+
+// Anonymous function holds the code.
+// Is executed automatically.
+(function main() {
+  /**
+   * swapPosition
+   *
+   * Swap the position of two selected layers.
+   */
+  var swapPosition = function () {
+    if (sketch.checkSelection(2, "Please select exactly 2 elements.")) {
+      // Wrap the two selected elements.
+      // Save the first element's position.
+      var $ele1 = $(selection[0]),
+        $ele2 = $(selection[1]),
+        pos1 = $ele1.position();
+
+      // Swap the position, set the first element's position
+      // to the second element's position, set the second
+      // element's positon to the saved first element's
+      // position.
+      $ele1.position($ele2.position());
+      $ele2.position(pos1);
+    }
+  };
+
+  /**
+   * copiesWithVaryingOpacity
+   *
+   * Copy a selected element "times" times, move the element
+   * and change the opacity.
+   *
+   * @param  {int} times The amount of copies
+   */
+  var copiesWithVaryingOpacity = function (times) {
+    if (!sketch.checkSelection(1, "Please select an element.")) {
+      return;
+    }
+
+    times = times || 5; // set times to 5 if omitted
+    var fraction = 1.0 / times, // set the fraction for the opacity calcualtion
+      $layer = $(selection[0]), // wrap the selected element with "$()"
+      layerOffset = $layer.width() + 10, // calculate the offset for the copies
+      layerX = $layer.x(), // get the selected element's x position with ".x()"
+      $copy = null, // instanciate the vriable for the copies
+      i; // define the loop variable
+
+    // Make "times" copies and change the x position and the opacity.
+    // jFacade setter methods are chainable. "$layer.x(value).opacity(value)"
+    for (i = 1; i < times; i++) {
+      $copy = $layer.duplicate();
+      $copy
+        .x(layerX + layerOffset * i)
+        .opacity(1 - fraction * i);
+    }
+  };
+
+  /**
+   * jFacadeProperties
+   *
+   * Log a list of the available jFacade properties
+   */
+  var jFacadeProperties = function () {
+    if (!sketch.checkSelection(1, "Please select an element.")) {
+      return;
+    }
+
+    var $layer = $(selection[0]), // wrap the selected element with "$()"
+      props = $layer.properties();
+
+    log("\n" + props.join("\n"));
+  };
+
+  /**
+   * inspectLayer
+   *
+   * Log the layer jFacade properties
+   */
+  var inspectLayer = function () {
+    if (!sketch.checkSelection(1, "Please select an element.")) {
+      return;
+    }
+
+    var $layer = $(selection[0]); // wrap the selected element with "$()"
+
+    log($layer.toString());
+  };
+
+  inspectLayer();
+  // jFacadeProperties();
+  // copiesWithVaryingOpacity();
+  // swapPosition();
+}());
+
+// Set all defined objects to null to force garbage collection,
+// otherwise Sketch may crash.
+sketch.cleanup();
