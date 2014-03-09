@@ -1,0 +1,33 @@
+{
+  "name": "jstalk-sketch-library",
+  "description": "A collection of JSTalk methods for Bohemian Coding’s Sketch. The methods support Sketch scripting - writing plugins or code that interacts with Sketch.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/uhunkler/jstalk-sketch-library",
+  "author": {
+    "name": "Urs Hunkler",
+    "email": "urs.hunkler@unodo.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uhunkler/jstalk-sketch-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uhunkler/jstalk-sketch-library/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/uhunkler/jstalk-sketch-library/blob/master/LICENSE"
+    }
+  ],
+  "main": "",
+  "engines": {
+    "jstalk": ">= 1.0.3"
+  },
+  "keywords": [
+    "Sketch",
+    "JSTalk",
+    "scripting",
+    "plugin"
+  ]
+}
