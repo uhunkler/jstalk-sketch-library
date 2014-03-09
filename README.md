@@ -6,9 +6,9 @@ A collection of JSTalk methods for Bohemian Coding’s Sketch. The methods suppo
 To use the libraries and the examples please copy the library folder and the two example “.jstalk” files into the Sketch “Plugins” folder.
 
 ## Libraries
-`library/sketch_connector.jstalk`
-`library/functional.jstalk`
-`library/jFacade.jstalk`
+`library/sketch_connector.jstalk`  
+`library/functional.jstalk`  
+`library/jFacade.jstalk`  
 
 ### sketch_connector.jstalk
 This library offers methods for common tasks
@@ -17,7 +17,7 @@ This library offers methods for common tasks
 * Offer methods to workaround known Sketch issues.
 
 ### functional.jstalk
-This library offers methods used in functional programming similar to the [underscore](https://github.com/jashkenas/underscore) or [Lo-Dash](http://lodash.com) libraries. The methods in the functional.jstalk are optimized for the use with JSTalk.
+This library offers methods used in functional programming similar to the [underscore](https://github.com/jashkenas/underscore) or [Lo-Dash](http://lodash.com) libraries. The methods in functional.jstalk are optimized for the use with JSTalk.
 
 ### jFacade.jstalk
 This library offers an interface to work with Sketch in a way similar to jQuery. It adds functionality like introspection and convenience methods like “position” and “size”.
@@ -32,17 +32,17 @@ log(layerProperties);
 
 ```
 // Get the selected layer and set the position and the fill color (set the first fill).
-// Set properties - add the parameter/s
+// Set properties - add parameter/s
 // Setters can be chained
 var $layer = $(selection[0]);
 $layer
   .position({x: 100, y: 100})
-	.fills(0)
-	.color("hex", "#ccc");
+  .fills(0)
+  .color("hex", "#ccc");
 ```
 
 ## Some Sketch jFacade examples
-`examples_jFacade.jstalk``script_template_jFacade.jstalk`
+`examples_jFacade.jstalk`  `script_template_jFacade.jstalk`  
 
 ### examples_jFacade.jstalk
 A script with some examples how to work with jFacade and Sketch layers.
@@ -57,5 +57,5 @@ A Sketch JSTalk script template with
 
 * the library includes
 * an anonymous, self executing “main” function to wrap the code
-* the cleanup function call at the end
+* a cleanup function call at the end
 
