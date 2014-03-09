@@ -84,6 +84,7 @@ sketch.cleanup();
 ```
 
 ## ToDos
+* Write tests
 * Write usage documentation with code examples
 * Write the jFacade documentation - how it works, how to extend the functionality
 * Add more comments in the library code
