@@ -3,6 +3,8 @@
 ### About
 A collection of JSTalk methods for Bohemian Coding’s Sketch. The methods support Sketch scripting - writing plugins or code that interacts with Sketch.
 
+The library is work in progress.
+
 To use the libraries and the examples please copy the library folder and the two example “.jstalk” files into the Sketch “Plugins” folder.
 
 ## Libraries
@@ -47,7 +49,8 @@ $layer
 ```
 
 ## Some Sketch jFacade examples
-`examples_jFacade.jstalk`  `script_template_jFacade.jstalk`  
+`examples_jFacade.jstalk`  
+`script_template_jFacade.jstalk`  
 
 ### examples_jFacade.jstalk
 A script with some examples how to work with jFacade and Sketch layers.
@@ -79,4 +82,12 @@ A Sketch JSTalk script template.
 // otherwise Sketch may crash.
 sketch.cleanup();
 ```
+
+## ToDos
+* Write usage documentation with code examples
+* Write the jFacade documentation - how it works, how to extend the functionality
+* Add more comments in the library code
+* Add more methods to the functional library
+* Add more methods to the jFacade library for better Sketch coverage
+
 
