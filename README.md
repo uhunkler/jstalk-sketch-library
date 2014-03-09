@@ -25,16 +25,21 @@ This library offers an interface to work with Sketch in a way similar to jQuery.
 ```
 // Get the layer description with the layer properties 
 // and log the output.
-// Get properties - no parameters
 var layerProperties = $(selection[0]).toString();
 log(layerProperties);
 ```
 
 ```
 // Get the selected layer and set the position and the fill color (set the first fill).
+// Get properties - no parameters
 // Set properties - add parameter/s
 // Setters can be chained
-var $layer = $(selection[0]);
+var $layer = $(selection[0]),
+  pos = $layer.position();
+
+// jlog prints a JSON stringified JavaScript/jFacade object
+jlog(pos); // {x:val, y:val}
+
 $layer
   .position({x: 100, y: 100})
   .fills(0)
